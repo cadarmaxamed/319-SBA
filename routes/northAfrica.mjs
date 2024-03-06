@@ -1,6 +1,6 @@
 import express from 'express';
-import northAfrica from './database/northAfrica.mjs'
-import { ObjectId } from 'mongodb';
+import database from '../database/northAfrica.mjs'
+
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Create a new North African country
-router.post('/', async (req, res) => {
+router.post('/:id', async (req, res) => {
   let collection = await database.collection('northAfrica');
   let result = await collection.insertOne(req.body);
   res.status(201).send(result.ops[0]);
