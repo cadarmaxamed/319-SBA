@@ -1,6 +1,7 @@
 import { MongoClient } from "mongodb";
 const EastAfricanCountries = [
     {
+     "id": 10,
       "country": "Kenya",
       "capital": "Nairobi",
       "population": 53771296,
@@ -10,6 +11,7 @@ const EastAfricanCountries = [
       "fact": "Home to the Maasai Mara National Reserve, famous for its wildlife and annual wildebeest migration."
     },
     {
+      "id": 15,
       "country": "Ethiopia",
       "capital": "Addis Ababa",
       "population": 114963588,
@@ -19,6 +21,7 @@ const EastAfricanCountries = [
       "fact": "The only African country never to be colonized, and the origin of coffee."
     },
     {
+      "id": 20,
       "country": "Eritrea",
       "capital": "Asmara",
       "population": 3546421,
@@ -28,6 +31,7 @@ const EastAfricanCountries = [
       "fact": "Home to the Dahlak Archipelago, known for its pristine coral reefs and marine biodiversity."
     },
     {
+      "id": 25,
       "country": "Somalia",
       "capital": "Mogadishu",
       "population": 15893219,
@@ -37,6 +41,7 @@ const EastAfricanCountries = [
       "fact": "Has the longest coastline in Africa and is known for its rich cultural heritage and nomadic way of life."
     },
     {
+      "id": 100,
       "country": "Sudan",
       "capital": "Khartoum",
       "population": 43849260,
