@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
+import WestAfricanCountries from './database/westAfrica.mjs';
+import EastAfricanCountries from './database/eastAfrica.mjs';
+import NorthAfricanCoutries from './database/northAfrica.mjs';
 
 dotenv.config();
 
