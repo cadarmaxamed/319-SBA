@@ -51,4 +51,4 @@ const EastAfricanCountries = [
       "fact": "The largest country in Africa, known for the Nile River, ancient Nubian civilization, and diverse cultures."
     }
   ]
-export default eastAfrica;
+export default EastAfricanCountries;
