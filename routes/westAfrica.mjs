@@ -6,14 +6,14 @@ const router = express.Router();
 
 // Get all West African countries
 router.get('/', async (req, res) => {
-  let collection = await database.collection('westAfrica');
+  let collection = await database.collection('WestAfrica');
   let result = await collection.find({}).limit(10).toArray();
   res.json(result);
 });
 
 // Get a single West African country by ID
 router.get('/:id', async (req, res) => {
-  let collection = await database.collection('westAfrica');
+  let collection = await database.collection('WestAfrica');
   let query = { _id: new ObjectId(req.params.id) };
   let result = await collection.findOne(query);
 
@@ -30,7 +30,7 @@ router.post('/:id', async (req, res) => {
 
 // Update an existing West African country by ID
 router.patch('/:id', async (req, res) => {
-  let collection = await database.collection('westAfrica');
+  let collection = await database.collection('WestAfrica');
   let query = { _id: new ObjectId(req.params.id) };
   let result = await collection.updateOne(query, { $set: req.body });
 
@@ -40,7 +40,7 @@ router.patch('/:id', async (req, res) => {
 
 // Delete a West African country by ID
 router.delete('/:id', async (req, res) => {
-  let collection = await database.collection('westAfrica');
+  let collection = await database.collection('WestAfrica');
   let query = { _id: new ObjectId(req.params.id) };
   let result = await collection.deleteOne(query);
 
