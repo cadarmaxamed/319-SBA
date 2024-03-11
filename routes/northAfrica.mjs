@@ -1,5 +1,4 @@
 import express from 'express';
-import database from '../database/northAfrica.mjs'
 
 
 const router = express.Router();

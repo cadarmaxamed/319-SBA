@@ -1,6 +1,6 @@
 import express from 'express';
-import database from '../database/eastAfrica.mjs'
-
+import { MongoClient } from 'mongodb';
+import { ObjectId } from 'mongodb';
 
 const router = express.Router();
 
