@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
-//import mongodb from 'mongodb' 
+import mongodb from 'mongodb';
+import eastAfrica from '/.routes/eastAfrica.mjs';
+import westAfrica from '/.routes/westAfrica.mjs';
+import northAfrica from '/.routes/eastAfrica.mjs';
 
 dotenv.config();
 
@@ -27,6 +30,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send(`Have a good Day`);
 });
+app.use('/eastAfrica', eastAfrica);
+app.use('/westAfrica', westAfrica);
+app.use('/northAfrica', northAfrica);
 
 // Global error handling
 app.use((err, _req, res, next) => {
