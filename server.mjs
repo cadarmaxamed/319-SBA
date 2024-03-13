@@ -20,9 +20,11 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send(`Have a good Day`);
 });
-app.use('/eastAfrica', eastAfrica);
-app.use('/westAfrica', westAfrica);
-app.use('/northAfrica', northAfrica);
+//used routes
+
+app.use('/EA', eastAfrica);
+app.use('/WA', westAfrica);
+app.use('/NA', northAfrica);
 
 // Global error handling
 app.use((err, _req, res, next) => {

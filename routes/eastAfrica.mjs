@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   let collection = await db.collection('EastAfrica');
   let result = await collection.find({}).limit(10).toArray();
-  res.json(result);
+  res.send(result);
 });
 
 // Get a single East African country by ID (checked)
