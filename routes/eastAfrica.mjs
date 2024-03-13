@@ -24,11 +24,11 @@ router.get('/:id', async (req, res) => {
 // Create a new East African country (Checked!!!)
 router.post('/', async (req, res) => {
   let collection = await db.collection('EastAfrica');
-  let newCountry = req.body;
+  let newDocument = req.body;
 
-  if(newCountry.id) {
-    newCountry._id = newCountry.id;
-    delete newCountry.id;
+  if(newDocument.id) {
+    newDocument._id = newDocument.id;
+    delete newDocument.id;
   }
   let result = await collection.insertOne(req.body);
   res.status(201).send(result.ops[0]);

@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   let collection = await db.collection('WestAfrica');
   let result = await collection.find({}).limit(10).toArray();
-  res.json(result);
+  res.send(result).status(200);
 });
 
 // Get a single East African country by ID (checked)
@@ -18,17 +18,17 @@ router.get('/:id', async (req, res) => {
   let result = await collection.findOne(query);
 
   if (!result) res.status(404).send('Not found');
-  else res.status(200).send(200);
+  else res.status(200).send(result);
 });
 
 // Create a new East African country (Checked!!!)
 router.post('/', async (req, res) => {
   let collection = await db.collection('WestAfrica');
-  let newCountry = req.body;
+  let newDocument = req.body;
 
-  if(newCountry.id) {
-    newCountry._id = newCountry.id;
-    delete newCountry.id;
+  if(newDocument.id) {
+    newDocument._id = newDocument.id;
+    delete newDocument.id;
   }
   let result = await collection.insertOne(req.body);
   res.status(201).send(result.ops[0]);
@@ -43,6 +43,8 @@ router.patch('/:id', async (req, res) => {
   if (result.modifiedCount === 0) res.status(404).send('Not found');
   else res.status(200).send('Updated successfully');
 });
+
+
 
 // Delete an East African country by ID
 router.delete('/:id', async (req, res) => {

@@ -15,6 +15,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db('Africa');
+let db = conn.db('Africa')
 
 export default db;

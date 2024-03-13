@@ -1,16 +1,20 @@
 import express from 'express';
 import dotenv from 'dotenv';
+
+
+//importing routes
 import eastAfrica from './routes/eastAfrica.mjs';
 import westAfrica from './routes/westAfrica.mjs';
-import northAfrica from './routes/eastAfrica.mjs';
+import northAfrica from './routes/northAfrica.mjs';
 
 
-dotenv.config();
+dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+
 
 // Routes
 app.get('/', (req, res) => {
