@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-
+import { MongoClient } from 'mongodb';
 
 //importing routes
 import eastAfrica from './routes/eastAfrica.mjs';
@@ -31,12 +31,9 @@ app.use((err, _req, res, next) => {
   res.status(500).send("Wrong Username and Password");
 });
 
-
+//adding indexes
 
 // Listen for Port
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
 });
-
-
-
